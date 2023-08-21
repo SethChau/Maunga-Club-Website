@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="form-style.css">
+    <title>Maunga Club - Sign up Now!</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img class="logo" src="Resources/logo.png" alt="Maunga Club logo" /></a>
+        <nav>
+            <a href="Index.html">Home</a>
+            <a href="kakapo.html">Kākāpo</a>
+            <a href="pukeko.html">Pūkeko</a>
+            <a href="kereru.html">Kererū</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <img class="hero-img" src="Resources/mountain_view_1.jpg" alt="Photo of the mountain you are allowed to ski or snowboard on" />
+    <div class="form_section">
+        <div class="form_wrapper">
+            <form class="form_wrap" id="signupForm">
+                <h2>Signing up for Maunga Club</h2>
+                <div class="custom_flex">
+                    <div class="w_48">
+                        <ul>
+                            <li>Full name</li>
+                            <li>Physical address</li>
+                            <li>Proof of address (e.g., copy of power bill)</li>
+                            <li>Proof of ID (driver's licence or passport)</li>
+                        </ul>
+                        <p>The information above needs to be sent to maungaclub@maungaclub.maungaclub</p>
+                        <p>After signing up, we will send you a confirmation email and email you regularly to keep you updated on Maunga Club.</p>
+                    </div>
+                    <div class="w_48">
+                        <input class="input_info mt_25" type="text" placeholder="Your Full Name*">
+                        <input class="input_info mt_25" type="email" placeholder="Your Email Address*">
+                        <input class="input_info mt_25" type="text" placeholder="Phone Number*">
+                        <input class="input_info mt_25" type="text" placeholder="Physical Address*">
+                        <input class="input_info mt_25" type="file" accept=".pdf, .doc, .docx" placeholder="Proof of Address*">
+                        <input class="input_info mt_25" type="file" accept=".pdf, .jpg, .png" placeholder="Proof of ID*">
+                    </div>
+                </div>
+                <button class="make_btn mt_25" type="submit">send message</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p><small>&copy; Maunga Club 2023 - Website by Seth Chau</small></p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('signupForm');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the form from submitting
+
+                // Reset form fields
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>
