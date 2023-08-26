@@ -1,12 +1,8 @@
-/* Add responsive styles for larger devices /
 .form_wrapper {
-    padding: 20px; / Add padding to the form wrapper /
-    border: 1px solid #f03b0e; / Add a border around the form wrapper with a blue color /
-    background-color: #0077A2; / Add a background color to the form wrapper /
-    border-radius: 10px; / Add border radius for rounded corners /
+    padding: 20px; /* Add padding to the form wrapper */
+    border-radius: 10px; /* Add border radius for rounded corners */
 }
 
-/ Add responsive styles for smaller devices */
 @media (max-width: 575px) {
     .form_wrap h2 {
         font-size: 24px;
