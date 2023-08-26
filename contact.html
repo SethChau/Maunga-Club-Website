@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="form-style.css">
-    <title>Maunga Club - Sign up Now!</title>
+    <title>Maunga Club - Contact</title>
 </head>
 <body>
     <header>
@@ -17,7 +18,15 @@
             <a href="contact.html">Contact</a>
         </nav>
     </header>
-    <img class="hero-img" src="Resources/mountain_view_1.jpg" alt="Photo of the mountain you are allowed to ski or snowboard on" />
+    
+    <!-- Display the Gallery -->
+    <div class="gallery-container">
+        <div class="gallery">
+            <p class="gallery-description">Description for the image</p>
+            <img class="gallery_image" alt="Gallery images, Enjoy!!!" />
+        </div>
+    </div>
+    
     <div class="form_section">
         <div class="form_wrapper">
             <form class="form_wrap" id="signupForm">
@@ -30,7 +39,7 @@
                             <li>Proof of address (e.g., copy of power bill)</li>
                             <li>Proof of ID (driver's licence or passport)</li>
                         </ul>
-                        <p>The information above needs to be sent to maungaclub@maungaclub.maungaclub</p>
+                        <p>The information below needs to be sent to maungaclub@maungaclub.maungaclub</p>
                         <p>After signing up, we will send you a confirmation email and email you regularly to keep you updated on Maunga Club.</p>
                     </div>
                     <div class="w_48">
@@ -46,20 +55,34 @@
             </form>
         </div>
     </div>
+    
     <footer>
         <p><small>&copy; Maunga Club 2023 - Website by Seth Chau</small></p>
     </footer>
+    
+    <!-- Display the gallery images -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('signupForm');
+        img_src_list = ["Resources/pukeko/adult_bedroom.jpg", "Resources/pukeko/bathroom.jpg","Resources/pukeko/chalet_view.jpg",
+        "Resources/kereru/kids_bedroom.jpg", "Resources/pukeko/chalet_exterior.jpg", "Resources/kereru/cabin_exterior.jpg", 
+        "Resources/kereru/kitchen.jpg", "Resources/kakapo/bunk_room.jpg","Resources/kakapo/cabin_exterior.jpg", "Resources/kakapo/cabin_view.jpg"
+    , "Resources/kakapo/hallway.jpg",]; 
+        
+        var galleryImage = document.querySelector(".gallery_image");
+        var currentIndex = 0;
 
-            form.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent the form from submitting
+        // Function to update the gallery image
+        function updateGalleryImage() {
+            galleryImage.src = img_src_list[currentIndex];
+        }
 
-                // Reset form fields
-                form.reset();
-            });
-        });
+        // Load the first image on page load
+        updateGalleryImage();
+
+        // Rotate images every 3 seconds
+        setInterval(function () {
+            currentIndex = (currentIndex + 1) % img_src_list.length;
+            updateGalleryImage();
+        }, 3000);
     </script>
 </body>
 </html>
