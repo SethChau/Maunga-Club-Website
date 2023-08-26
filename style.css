@@ -5,6 +5,11 @@ body {
     text-align: center;
 }
 
+.gallery_image {
+    width: 1500px; /* Set the width to cover the entire width of the container */
+    height: 750px; /* Automatically adjust the height to maintain aspect ratio */
+}
+
 body.home {
     background-image: url('Resources/maunga_club_cabin.jpg');
     background-size: cover;
@@ -12,9 +17,13 @@ body.home {
     background-attachment: fixed;
     color: white;
 }
+.kakapo-content {
+    text-align: center;
+    padding: 100px 20px;
+}
 
-/* Style for the hero content */
 .hero-content {
+    font-family: 'Georgia', serif;
     text-align: center;
     padding: 100px 20px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -22,16 +31,30 @@ body.home {
 
 header {
     background-color: black;
-    height: 100px;
-    margin-bottom: 20px;
+    height: 60px; /* Adjust the height to your desired value */
+    margin-bottom: 0;
     text-align: left;
     width: 100%;
     position: fixed;
+    top: 0;
     z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+}
+
+nav {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* Adjust the height to your desired value */
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 0 20px;
+    top: 60px; /* Adjust the top value to match the header's new height */
 }
 
 .logo {
@@ -41,18 +64,11 @@ header {
     left: 20px;
     z-index: 1000;
 }
-
-nav {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-    padding: 0 20px;
+.credits{
+    margin-top:69vw;
 }
+
+
 
 /* Navigation link styles */
 nav a {
@@ -66,15 +82,6 @@ nav a:hover {
     background-color: white;
     color: black;
     border-radius: 5px;
-}
-
-.hero-img {
-    width: 100%;
-    max-width: 1800px;
-    position: relative;
-    text-align: center;
-    color: white;
-    opacity: 0.9;
 }
 
 h1 {
@@ -100,11 +107,11 @@ h1 {
 
 footer {
     position: absolute;
-    bottom: 0;
+    top:82vw;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 10px 0;
+    padding: 10px 10px;
 }
 
 .mid1, .mid2, .mid3 {
@@ -192,13 +199,94 @@ ul {
 }
 
 .flip-card-front {
-    background-color: white;
+    background-color: transparent; /* Set background color to transparent */
 }
 
 .flip-card-back {
-    background-color: #f0f0f0;
+    background-color: white; /* Set background color to transparent */
     transform: rotateY(180deg);
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* Add position: relative for the gradient positioning */
 }
+
+.flip-card-back::before {
+    content: ""; /* Create a pseudo-element for the reflection effect */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent); /* Gradient for the reflection */
+    pointer-events: none; /* Ensure the reflection doesn't interfere with interaction */
+    transform: scaleY(-1); /* Flip the gradient vertically for reflection effect */
+}
+
+.column.flip-card {
+    perspective: 1000px;
+    position: relative;
+    margin: 4px; /* Add margin for spacing between flip cards */
+    width: 3000px;
+    height: 300px;
+}
+
+@keyframes backgroundCycle {
+    0% {
+        background-image: url('Resources/kakapo/cabin_exterior.jpg');
+    }
+    33.33% {
+        background-image: url('Resources/pukeko/chalet_view.jpg');
+    }
+    66.67% {
+        background-image: url('Resources/kakapo/cabin_view.jpg');
+    }
+    100% {
+        background-image: url('Resources/pukeko/chalet_exterior.jpg');
+    }
+}
+
+body.animation.kakapo {
+    animation: backgroundCycle 10s infinite;
+}
+
+body.animation.pukeko {
+    animation: backgroundCycle 10s infinite;
+}
+
+body.animation.kereru {
+    animation: backgroundCycle 10s infinite;
+}
+
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999; /* Ensure snowflakes appear above content */
+    overflow: hidden; /* Hide snowflakes that go beyond viewport */
+}
+
+/* Other existing styles for snowflakes */
+.snowflake {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+  
