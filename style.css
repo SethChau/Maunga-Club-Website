@@ -5,6 +5,10 @@ body {
     text-align: center;
 }
 
+.two {
+    color: white
+}
+
 .gallery_image {
     width: 1500px; /* Set the width to cover the entire width of the container */
     height: 750px; /* Automatically adjust the height to maintain aspect ratio */
