@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 // Function to create a snowflake element
 function createSnowflake() {
     const snowflake = document.createElement("div");
